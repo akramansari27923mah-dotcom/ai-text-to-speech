@@ -1,11 +1,17 @@
 import AiTextToSpeach from "./components/AiTextToSpeach"
-
-
+import { Route, Routes, BrowserRouter } from "react-router-dom"
+import LandingPage from "./components/LandingPage"
 const App = () => {
   return (
-    <div className='w-full h-screen flex justify-center items-center bg '>
-      <AiTextToSpeach />
-    </div>
+
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="ai" element={<AiTextToSpeach />} />
+        <Route path="*" element={<h1>Not ! found</h1>} />
+      </Routes>
+    </BrowserRouter>
+
   )
 }
 
